@@ -10,13 +10,13 @@ def main(page:Page):
     page.scroll = 'auto'
     page.window.resizable=True
     page.window.title_bar_hidden=True
-    im=Column(wrap=True,scroll='auto' )
-    for i in range(0,30):
+    im=Column(expand=True,wrap=True,scroll='auto' )
+    for i in range(0,10):
         im.controls.append(
             Image(
                 src=f"Pcs/{i}.JPG",
-                width=360,
-                height=600,
+                width=347,
+                height=450,
                 fit=ImageFit.FILL,
                 repeat=ImageRepeat.NO_REPEAT,
                 border_radius=border_radius.all(10)
@@ -24,7 +24,8 @@ def main(page:Page):
         )   
  
     def close(cls):
-        page.window.close()                                  
+        page.window.close()
+        return                                  
     page.update()
     def Mypages(vws):
         page.views.clear()              
@@ -41,6 +42,7 @@ def main(page:Page):
                                     spacing=10,
                                     height=700,
                                     width=360,
+                                    expand=True,
                                     scroll=ScrollMode.HIDDEN,
                                     controls=[
                                     Container(
@@ -91,21 +93,21 @@ def main(page:Page):
                                         ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
                                             
-                                    Container(height=30),
+                                    Container(height=25),
                                     Row(
                                         [
                                             Container(
-                                                height=50,
+                                                height=55,
                                                 width=260,
                                                 border_radius=5,
                                                 bgcolor=colors.BLUE_100,
                                                 padding=10,
                                                 content=Row(
                                                             [
-                                                            Text('الأنساب والأرحام والمعارف  ',color= colors.BLACK87, size= 25,weight='bold',font_family ='Arabic Typesetting',rtl=True),
-                                                            OutlinedButton("دخول",width= 50,height= 50,style=ButtonStyle(color='black',bgcolor = colors.RED_100,shape=RoundedRectangleBorder(radius=3)),
+                                                            Text('    '+'الأنساب والمعارف  ',color= colors.BLACK87, size= 25,weight='bold',font_family ='Arabic Typesetting',rtl=True),
+                                                            OutlinedButton("دخول",width= 50,height= 30,style=ButtonStyle(color='black',bgcolor = colors.RED_100,shape=RoundedRectangleBorder(radius=3)),
                                                             on_click = lambda _:page.go("/rel")),
-                                                            ],alignment = MainAxisAlignment.SPACE_BETWEEN,rtl=True
+                                                            ],alignment=MainAxisAlignment.SPACE_BETWEEN,rtl=True
                                                         )
                                             )
                                         ],alignment = MainAxisAlignment.CENTER
@@ -116,7 +118,7 @@ def main(page:Page):
                                                 )
                                             ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
-                                    Container(height=30),
+                                    Container(height=40),
                                     Container(
                                         Row(
                                             controls=[
@@ -136,7 +138,7 @@ def main(page:Page):
                 bgcolor= colors.BLUE_300,
                 expand=True,
                 )    
-           ])    
+           ],padding=0)    
         )#appended_end       
 ######################################################
 ######################################################
@@ -146,12 +148,15 @@ def main(page:Page):
                 "/defi",
                     [  
                         AppBar(title=Text(" معلومات عامة متفرقة",color='black',size=28,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
-                            Column([     
-                            ]),
+                            Column(
+                                controls=[
+                                Text('  تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر والسلام عليكم ',font_family='adwa-assalaf',size=20,weight='bold',color='black')     
+                            ],alignment=MainAxisAlignment.CENTER,scroll='auto',rtl=True),
+                            
                             width = 360,
-                            height = 650,
+                            height = 700,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -167,7 +172,7 @@ def main(page:Page):
                 "/places",
                     [  
                         AppBar(title=Text("أهم الأماكن والأحياء",color='black',size=28,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Column([
                                 Container(
@@ -190,7 +195,7 @@ def main(page:Page):
                                     ],alignment =MainAxisAlignment.CENTER,rtl=True),    
                             ]),
                             width = 360,
-                            height = 650,
+                            height = 700,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -205,15 +210,15 @@ def main(page:Page):
              View(
                 "rel",
                     [  
-                        AppBar(title=Text("  الأنساب وعلاقات الرحم والمعارف",color='black',size=25,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                        AppBar(title=Text("  الأنساب والأرحام والمعارف",color='black',size=25,weight='bold',font_family='Arabic Typesetting'),center_title=True,
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Column([
                                 Container(height=300),   
                                 
                             ]),
                             width = 360,
-                            height = 650,
+                            height = 700,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -229,14 +234,14 @@ def main(page:Page):
                 "/defi",
                     [  
                         AppBar(title=Text("التعليم والصحة في فتوار ",color='black',size=25,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Column([
                             Container(height=300),   
                                
                             ]),
                         width = 360,
-                        height = 650,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=10
                         )  
@@ -252,14 +257,14 @@ def main(page:Page):
                 "/spo",
                     [  
                         AppBar(title=Text("الأندية والمناشط الرياضية ",color='black',size=25,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Column([
                                 Container(height=300),   
                                 
                             ]),
                             width = 360,
-                            height = 650,
+                            height = 700,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -275,14 +280,14 @@ def main(page:Page):
                 "/stars",
                     [  
                         AppBar(title=Text(" شخصيات وأعلام من فتوار  ",color='black',size=25,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Column([
                                 Container(height=300),   
                                 
                             ]),
                             width = 360,
-                            height = 650,
+                            height = 700,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -298,7 +303,7 @@ def main(page:Page):
                 "/img",
                     [  
                         AppBar(title=Text(" صور منوعة من فتوار",color='black',size=28,weight='bold',font_family='Arabic Typesetting'),center_title=True,
-                           bgcolor=colors.RED_300,toolbar_height=47,rtl=True),
+                           bgcolor=colors.RED_300,toolbar_height=50,rtl=True),
                         Container(
                             Stack(
                                 controls=[
@@ -328,7 +333,7 @@ def main(page:Page):
 
                             ]),
                         width = 360,
-                        height = 650,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -354,7 +359,7 @@ def main(page:Page):
 
                             ]),
                         width = 360,
-                        height = 650,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -380,7 +385,7 @@ def main(page:Page):
 
                             ]),
                         width = 360,
-                        height = 650,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -406,7 +411,7 @@ def main(page:Page):
 
                             ]),
                         width = 360,
-                        height = 740,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -432,7 +437,7 @@ def main(page:Page):
 
                             ]),
                         width = 360,
-                        height = 650,
+                        height = 700,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  

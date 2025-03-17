@@ -1,8 +1,10 @@
 from flet import*
 def main(page:Page):
     page.title ="شجرة فتوار"
-    page.window.width = 360
-    page.window.height =700
+    page.window.width = 450
+    page.window.height =800
+    page.window.max_width=max
+    page.window.max_height=main
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
     page.scroll = 'auto'
@@ -15,8 +17,8 @@ def main(page:Page):
         im.controls.append(
             Image(
                 src=f"Pcs/{i}.JPG",
-                width=347,
-                height=450,
+                width=page.window.width,
+                height=600,
                 fit=ImageFit.FILL,
                 repeat=ImageRepeat.NO_REPEAT,
                 border_radius=border_radius.all(10)
@@ -35,13 +37,13 @@ def main(page:Page):
             [
                 Container(
                     Stack([
-                        Image(src='Pcs/011.jpg',height=700,width=360,fit=ImageFit.FILL,opacity=1),       
+                        Image(src='Pcs/011.jpg',height=page.window.height,width=page.window.width,fit=ImageFit.FILL,opacity=1),       
                         Container(
                             Column([
                                 Column(
                                     spacing=10,
-                                    height=700,
-                                    width=360,
+                                    height=page.window.height,
+                                    width=page.window.width,
                                     expand=True,
                                     scroll=ScrollMode.HIDDEN,
                                     controls=[
@@ -53,59 +55,59 @@ def main(page:Page):
                                                 IconButton(icon=icons.SEARCH,tooltip='بحث',icon_color='white',icon_size=20),
                                             ]
                                         ),
-                                        padding=10
+                                        padding=padding.only(top=15,left=10,right=10)
                                     ),  
                                     Column([
                                         Row(
                                             alignment = MainAxisAlignment.CENTER,
                                             controls=[  
-                                            Text('بسم الله الرحمن الرحيم ',weight='bold',font_family ='Arabic Typesetting',color= colors.WHITE, size= 20),
+                                            Text('بسم الله الرحمن الرحيم ',weight='bold',font_family ='Arabic Typesetting',color= colors.WHITE, size=  0.055*page.window.width),
                                             ]
                                         ),
-                                        Container(height=30),
+                                        Container(height=0.08*page.window.height),
                                         Row(
                                             alignment = MainAxisAlignment.CENTER,
                                             controls=[    
-                                                Text('مرحبا بكم في برنامجنا التعريفي بفتوار ',weight='bold',font_family ='Arabic Typesetting',color= colors.WHITE, size= 30)
+                                                Text('مرحبا بكم في برنامجنا التعريفي بفتوار ',weight='bold',font_family ='Arabic Typesetting',color= colors.WHITE, size= 0.085*page.window.width),
                                                 ]
                                             )
                                     ]),
-                                    Text('\n'),                               
+                                    Container(height=0.045*page.window.height),                               
                                     Row([
-                                        ElevatedButton('تعريف عام',width= 130,height=33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton('تعريف عام',width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/defi")),
-                                        ElevatedButton("المعالم والأحياء",width= 130,height=33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton("المعالم والأحياء",width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/places")),
                                         ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
                                     Row([
-                                        ElevatedButton("التعليم والصحة",width= 130,height= 33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton("التعليم والصحة",width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/ediu")),
-                                        ElevatedButton("الأندية والرياضة",width= 130,height= 33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton("الأندية والرياضة",width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/spo")),
                                         ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
                                     Row([
-                                        ElevatedButton("أعلام ورموز ",width= 130,height= 33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton("أعلام ورموز ",width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/stars")),
-                                        ElevatedButton(" صور مختارة",width= 130,height= 33,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
+                                        ElevatedButton(" صور مختارة",width= 0.35*page.window.width,height=0.05*page.window.height,style=ButtonStyle(bgcolor = colors.TEAL_700,color = colors.WHITE),
                                             on_click = lambda _:page.go("/img")),
                                         ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
                                             
-                                    Container(height=25),
+                                    Container(height=0.035*page.window.height),
                                     Row(
                                         [
                                             Container(
-                                                height=55,
-                                                width=260,
+                                                height=0.08*page.window.height,
+                                                width=0.7*page.window.width,
                                                 border_radius=5,
                                                 bgcolor=colors.BLUE_100,
-                                                padding=10,
+                                                padding=padding.only(top=0,left=15,right=15,bottom=0),
                                                 content=Row(
                                                             [
                                                             Text('    '+'الأنساب والمعارف  ',color= colors.BLACK87, size= 25,weight='bold',font_family ='Arabic Typesetting',rtl=True),
-                                                            OutlinedButton("دخول",width= 50,height= 30,style=ButtonStyle(color='black',bgcolor = colors.RED_100,shape=RoundedRectangleBorder(radius=3)),
+                                                            OutlinedButton("دخول",width= 0.17*page.window.width,height=0.05*page.window.height,style=ButtonStyle(color='black',bgcolor = colors.RED_100,shape=RoundedRectangleBorder(radius=3)),
                                                             on_click = lambda _:page.go("/rel")),
                                                             ],alignment=MainAxisAlignment.SPACE_BETWEEN,rtl=True
                                                         )
@@ -114,29 +116,28 @@ def main(page:Page):
                                     ),
                                     Row(
                                         controls=[
-                                            OutlinedButton(" قال صل الله عليه وسلم: { تعلموا من أنسابكم ماتصلون به أرحامكم فإن صلة الرحم محبة في الأهل مثراة في المال منسأة في الأثر } رواه الترمزي وصححه الألباني",width= 260,height= 100,style=ButtonStyle(padding=15,bgcolor=Colors.BLUE_100,color = colors.BLACK87,shape=RoundedRectangleBorder(radius=10)),disabled=True,
+                                            OutlinedButton(" قال صل الله عليه وسلم: { تعلموا من أنسابكم ماتصلون به أرحامكم فإن صلة الرحم محبة في الأهل مثراة في المال منسأة في الأثر } رواه الترمزي وصححه الألباني",width= 0.7*page.window.width,height= 0.12*page.window.height,style=ButtonStyle(padding=10,bgcolor=Colors.BLUE_100,color = colors.BLACK87,shape=RoundedRectangleBorder(radius=10)),disabled=True,
                                                 )
                                             ],alignment = MainAxisAlignment.CENTER,rtl=True
                                     ),
-                                    Container(height=40),
+                                    Container(height=0.06*page.window.height),
                                     Container(
                                         Row(
                                             controls=[
-                                                OutlinedButton("حول البرنامج ",width= 100,height= 30,style=ButtonStyle(color = colors.WHITE,shape=RoundedRectangleBorder(radius=10)),
+                                                OutlinedButton("حول البرنامج ",width= 0.3*page.window.width,height= 0.05*page.window.height,style=ButtonStyle(color = colors.WHITE,shape=RoundedRectangleBorder(radius=10)),
                                                 on_click = lambda _:page.go("/ediu")),
-                                                OutlinedButton("تحديث البرنامج",width= 110,height= 30,style=ButtonStyle(color = colors.WHITE,shape=RoundedRectangleBorder(radius=10)),
+                                                OutlinedButton("تحديث البرنامج",width= 0.3*page.window.width,height= 0.05*page.window.height,style=ButtonStyle(color = colors.WHITE,shape=RoundedRectangleBorder(radius=10)),
                                                 on_click = lambda _:page.go("/ediu")),
                                             ],alignment =MainAxisAlignment.SPACE_BETWEEN,rtl=True
                                         ),
                                         padding=10
                                     )             
                                 ])
-                            ])
+                            ]),
+                        expand=True,
                         )
                     ]),
-                border_radius=15,
-                bgcolor= colors.BLUE_300,
-                expand=True,
+                expand=True
                 )    
            ],padding=0)    
         )#appended_end       
@@ -155,8 +156,8 @@ def main(page:Page):
                                 Text('  تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر تعتبر قرية فتوار من القرى التي تقع في الاتجاه الغربي لنهر النيل وتوجد في منطقة الباوقة شمال بربر والسلام عليكم ',font_family='adwa-assalaf',size=20,weight='bold',color='black')     
                             ],alignment=MainAxisAlignment.CENTER,scroll='auto',rtl=True),
                             
-                            width = 360,
-                            height = 700,
+                            width = page.window.width,
+                            height = page.window.height,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -194,8 +195,8 @@ def main(page:Page):
                                         on_click = lambda _:page.go("/abg")),
                                     ],alignment =MainAxisAlignment.CENTER,rtl=True),    
                             ]),
-                            width = 360,
-                            height = 700,
+                            width = page.window.width,
+                            height = page.window.height,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -217,8 +218,8 @@ def main(page:Page):
                                 Container(height=300),   
                                 
                             ]),
-                            width = 360,
-                            height = 700,
+                            width = page.window.width,
+                            height = page.window.height,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -240,8 +241,8 @@ def main(page:Page):
                             Container(height=300),   
                                
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=10
                         )  
@@ -263,8 +264,8 @@ def main(page:Page):
                                 Container(height=300),   
                                 
                             ]),
-                            width = 360,
-                            height = 700,
+                            width = page.window.width,
+                            height = page.window.height,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -286,8 +287,8 @@ def main(page:Page):
                                 Container(height=300),   
                                 
                             ]),
-                            width = 360,
-                            height = 700,
+                            width = page.window.width,
+                            height = page.window.height,
                             bgcolor = colors.YELLOW_100, 
                             padding=10
                         )  
@@ -332,8 +333,8 @@ def main(page:Page):
                                 
 
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -358,8 +359,8 @@ def main(page:Page):
                                 
 
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -384,8 +385,8 @@ def main(page:Page):
                                 
 
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -410,8 +411,8 @@ def main(page:Page):
                                 
 
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
@@ -436,8 +437,8 @@ def main(page:Page):
                                 
 
                             ]),
-                        width = 360,
-                        height = 700,
+                        width = page.window.width,
+                        height = page.window.height,
                         bgcolor = colors.YELLOW_100, 
                         padding=padding.only(top=18,left=10,right=10,bottom=10)
                         )  
